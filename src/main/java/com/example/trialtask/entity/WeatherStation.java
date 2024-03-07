@@ -1,14 +1,20 @@
 package com.example.trialtask.entity;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.RequiredArgsConstructor;
 
 @Data
+@Builder
+@AllArgsConstructor
+@RequiredArgsConstructor
 @Entity
-@Table(name = "weatherStations")
-public class WeatherStations {
+@Table(name = "weatherStation")
+public class WeatherStation {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false)
     private long id;
 

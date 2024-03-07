@@ -1,1 +1,23 @@
+application:
+  weatherPhenomenon:
+    snowOrSleet: ["Light snow shower", "Moderate snow shower", "Heavy snow shower", "Light sleet", "Moderate sleet", "Light snowfall", "Moderate snowfall", "Heavy snowfall", "Blowing snow", "Drifting snow"]
+    rain: ["Light shower", "Moderate shower", "Heavy shower", "Light rain", "Moderate rain", "Heavy rain"]
+    forbidden: ["Glaze", "Hail", "Thunder", "Thunderstorm"]
+  weatherCron: "0 15 * * * *"
+  weatherDataUri: "https://www.ilmateenistus.ee/ilma_andmed/xml/observations.php"
 
+spring:
+  datasource:
+    url: jdbc:h2:mem:db
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    defer-datasource-initialization: true
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
+  h2:
+    console:
+      enabled: true
